@@ -1,6 +1,6 @@
 #include <unistd.h>
 
-**
+/**
  * main - prints message to stderr
  *
  * return: 1
