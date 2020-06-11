@@ -4,7 +4,7 @@
  * main - Entry point
  *
  * prints out byte size of different types
- * returns: 0
+ * returns: 0 upon success
  */
 int main(void)
 {
