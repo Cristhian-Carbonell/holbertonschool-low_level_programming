@@ -3,8 +3,8 @@
 /**
  * main - Entry point
  *
- * description: prints out byte size of different types
- * returns: 0 upon success
+ * Description: prints out byte size of different types
+ * Returns: 0 upon success
  */
 int main(void)
 {
