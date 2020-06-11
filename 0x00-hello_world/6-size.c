@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Print various size of types
  *
  * Description: prints out byte size of different types
  * Returns: 0 upon success
