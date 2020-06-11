@@ -3,7 +3,7 @@
 /**
  * main - prints message to stderr
  *
- * return: 1
+ * Return: "1"
  */
 int main(void)
 {
