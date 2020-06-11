@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * prints out byte size of different types
+ * description: prints out byte size of different types
  * returns: 0 upon success
  */
 int main(void)
