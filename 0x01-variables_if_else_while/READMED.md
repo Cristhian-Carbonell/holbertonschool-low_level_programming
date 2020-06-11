@@ -1,8 +1,8 @@
 # C- Variables, if, else, while, project 0x01
 
-##Resources
+## Resources
 
-###Read or watch:
+### Read or watch:
 
 * Everything you need to know to start with C
 * Keywords and identifiers
