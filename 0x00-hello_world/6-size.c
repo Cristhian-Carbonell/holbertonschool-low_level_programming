@@ -4,7 +4,7 @@
  * main - Print various size of types
  *
  * Description: prints out byte size of different types
- * Returns: 0 upon success
+ * Returns: "0 upon success"
  */
 int main(void)
 {
