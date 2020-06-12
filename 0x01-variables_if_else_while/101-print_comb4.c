@@ -7,18 +7,18 @@
  */
 int main(void)
 {
-	int n, n, c;
+	int a, b, c;
 
-	for (n = '0'; n <= '7'; n++)
-		for (m = n + 1; m <= '8'; m++)
-			for (c = m + 1; c <= '9'; c++)
+	for (a = '0'; a <= '7'; a++)
+		for (b = a + 1; b <= '8'; b++)
+			for (c = b + 1; c <= '9'; c++)
 			{
-				if (n != m && n != c && m != c)
+				if (a != b && a != c && b != c)
 				{
-					putchar(n);
-					putchar(m);
+					putchar(a);
+					putchar(b);
 					putchar(c);
-					if (n != '7' || m != '8' || c != '9')
+					if (a != '7' || b != '8' || c != '9')
 					{
 						putchar(',');
 						putchar(' ');
