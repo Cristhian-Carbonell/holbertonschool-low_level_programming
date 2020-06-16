@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_sing - prints + if n is greater than 0
+ * print_sign - prints + if n is greater than 0
  * 0 is n is 0 - if n is less tahn 0
  * @n: integer to be tested in relation to 0
  *
