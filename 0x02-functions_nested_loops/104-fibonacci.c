@@ -14,8 +14,8 @@ int main(void)
 	b = 2;
 	for (i = 0; i < 97; i++)
 	{
-		if ( i == 0)
-			printf("%lu, %lu", a ,b);
+		if (i == 0)
+			printf("%lu, %lu", a, b);
 		else
 		{
 		tmp = a;
