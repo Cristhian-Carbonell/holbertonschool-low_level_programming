@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- * swap_int - prints two values that are exchanged
- * @a: variable that prints the value 42
- * @b: variable that prints the value 98
+ * swap_int - swaps the values of two integers
+ * @a: pointer to int to be swapped
+ * @b: pointer to other int to be swapped
  */
 void swap_int(int *a, int *b)
 {
@@ -11,5 +11,5 @@ void swap_int(int *a, int *b)
 
 	exc = *b;
 	*b = *a;
-	*a = tmp;
+	*a = exc;
 }
