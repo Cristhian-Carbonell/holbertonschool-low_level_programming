@@ -6,7 +6,7 @@
  */
 void puts2(char *str)
 {
-#	int a, b;
+	int a, b;
 
 	a = 0;
 	while (str[a])
