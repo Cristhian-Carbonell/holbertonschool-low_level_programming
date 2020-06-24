@@ -6,6 +6,8 @@
  * terminating null byte
  * @dest: destination for string to be copied
  * @src: string to be copied
+ *
+ * Return: pointer to destination
  */
 char *_strcpy(char *dest, char *src)
 {
