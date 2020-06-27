@@ -2,7 +2,7 @@
 
 /**
  * rot13 - encodes a string using rot13
- * @str: string
+ * @str: character
  *
  * Return: string with rot13
  */
@@ -21,9 +21,9 @@ char *rot13(char *str)
 				str[i] = to[b];
 			}
 			else if (str[i] == to[b])
-			{
-				str[i] = ebg13[b];
-			}
+			     {
+				     str[i] = ebg13[b];
+			     }
 		}
 	}
 	return (str);
