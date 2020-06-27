@@ -9,8 +9,8 @@
 char *rot13(char *str)
 {
 	int i, b;
-	char ebg[] = "abcdefghijklmABCDEFGHIJKLM";
-	char to[] = "nopqrstuvwxyzNOPQRSTUVWXYZ";
+	char ebg[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char to[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -19,10 +19,7 @@ char *rot13(char *str)
 			if (str[i] == ebg[b])
 			{
 				str[i] = to[b];
-			}
-			else if (str[i] == to[b])
-			{
-				str[i] = ebg[b];
+				break;
 			}
 		}
 	}
