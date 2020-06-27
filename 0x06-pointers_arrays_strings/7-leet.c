@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * leet -
- * @str:
+ * leet - encodes a string into 1337
+ * @str: string
  *
- * Return:
+ * Return: string with 1337
  */
 char *leet(char *str)
 {
