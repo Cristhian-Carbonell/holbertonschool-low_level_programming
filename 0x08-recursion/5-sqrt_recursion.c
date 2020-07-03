@@ -2,8 +2,8 @@
 
 /**
  * square_root - auxiliary function
- * @i: integer
- * @j: integer
+ * @x: integer
+ * @y: integer
  *
  * Return: root, -1 not
  */
