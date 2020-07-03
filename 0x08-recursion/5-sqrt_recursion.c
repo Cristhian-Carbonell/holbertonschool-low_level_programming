@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * square_root - auxiliary function
+ * calculate_raiz - auxiliary function
  * @x: integer
  * @y: integer
  *
