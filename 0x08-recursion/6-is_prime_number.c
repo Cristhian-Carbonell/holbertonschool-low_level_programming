@@ -25,7 +25,7 @@ int primo_noPrimo(int n, int y)
 }
 
 /**
- * is_palindrome - check if the input integer is a prime number
+ * is_prime_number - check if the input integer is a prime number
  * @n: integer
  *
  * Return: 1 if the input iteger is a prime number, 0 not
