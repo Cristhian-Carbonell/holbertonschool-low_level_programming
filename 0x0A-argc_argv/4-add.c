@@ -19,9 +19,11 @@ int main(int argc, char *argv[])
 		for (x = 1; argv[x]; x++)
 		{
 			y = strtol(argv[x], &ptr, 10);
-			suma += y;
-
-			if (ptr)
+			if (!*ptr)
+			{
+				suma += y;
+			}
+			else
 			{
 				printf("Error\n");
 				return (1);
