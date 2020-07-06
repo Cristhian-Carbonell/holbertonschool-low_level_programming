@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 /**
+ * main - entry point
+ * @argc: count
+ * @argv: vector
  *
- *
- *
- *
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
