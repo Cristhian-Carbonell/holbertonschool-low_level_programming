@@ -29,8 +29,7 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-		printf("%ld\n", suma);
 	}
-
+	printf("%ld\n", suma);
 	return (0);
 }
