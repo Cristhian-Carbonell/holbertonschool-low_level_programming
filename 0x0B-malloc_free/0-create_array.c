@@ -23,6 +23,6 @@ char *create_array(unsigned int size, char c)
 	{
 		ptr[i] = c;
 	}
-	c = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }
