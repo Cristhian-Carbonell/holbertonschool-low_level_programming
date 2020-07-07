@@ -21,10 +21,10 @@ char *create_array(unsigned int size, char c)
 	for (i = 0; i < size; i++)
 	{
 		ptr[i] = c;
-	}
-	if (ptr == NULL)
-	{
-		return (ptr);
+		if (ptr == NULL)
+		{
+			return (ptr);
+		}
 	}
 	return (ptr);
 }
