@@ -26,7 +26,7 @@ int **alloc_grid(int width, int height)
 		cuadri[i] = malloc(width * sizeof(int));
 		if (cuadri[i] == NULL)
 		{
-			for (j = 0; j < i; j++)
+			for (; i >= 0; i--)
 			{
 				free(cuadri[i]);
 			}
