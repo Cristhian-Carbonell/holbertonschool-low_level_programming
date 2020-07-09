@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 			longitud++;
 		}
 	}
-	ptr = malloc((longitud + ac)* sizeof(char));
+	ptr = malloc((longitud + ac) * sizeof(char));
 	longitud = 0;
 	if (ptr == NULL)
 	{
@@ -40,7 +40,5 @@ char *argstostr(int ac, char **av)
 		ptr[longitud] = '\n';
 		longitud++;
 	}
-	ptr[longitud] = '\0';
 	return (ptr);
-
 }
