@@ -12,7 +12,7 @@ int **alloc_grid(int width, int height)
 	int i, j;
 	int **cuadri;
 
-	if (width <= 0 || height <= 0)
+	if (width < 1 || height < 1)
 	{
 		return (NULL);
 	}
@@ -33,9 +33,6 @@ int **alloc_grid(int width, int height)
 			free(cuadri);
 			return (NULL);
 		}
-	}
-	for (i = 0; i < height; i++)
-	{
 		for (j = 0; j < width; j++)
 		{
 			cuadri[i][j] = 0;
