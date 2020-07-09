@@ -5,11 +5,11 @@
  * @s1: string
  * @s2: string
  *
- * Return:
+ * Return: pointer
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, a, b = 0;
+	int i, j, a, b;
 	char *ptr;
 
 	if (s1 == NULL)
@@ -28,17 +28,15 @@ char *str_concat(char *s1, char *s2)
 	{
 		;
 	}
-	ptr = malloc((i * sizeof(*s1)) + (j * sizeof(*s2)) + 1);
-	for (a = 0; a < (i + j); a++)
+	ptr = malloc((i + j + 1) * sizeof(char));
+	for (a = 0; a < i; a++)
 	{
-		if (a < 6)
-		{
-			ptr[a] = s1[a];
-		}
-		else
-		{
-			ptr[a] = s2[b++];
-		}
+		ptr[a] = s1[a];
 	}
+	for (b = 0; b < j; b++, a++)
+	{
+		ptr[a] = s2[b];
+	}
+	ptr[a] = '\0';
 	return (ptr);
 }
