@@ -1,14 +1,16 @@
 #include "holberton.h"
 
 /**
- * malloc_checked -
- * @b:
+ * malloc_checked - that allocates memory using malloc
+ * @b: memory block size
+ *
+ * Return: pointer to the allocate memory
  */
 void *malloc_checked(unsigned int b)
 {
 	int *ptr;
 
-	ptr = malloc(b * sizeof(unsigned int));
+	ptr = malloc(b);
 	if (ptr == NULL)
 	{
 		exit(98);
