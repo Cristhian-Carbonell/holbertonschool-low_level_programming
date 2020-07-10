@@ -22,7 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[j] != '\0')
 		j++;
 	j++;
-	if (n > j)
+	if (n >= j)
 		ptr = malloc((i + j) * sizeof(char));
 	else
 		ptr = malloc((i + n + 1) * sizeof(char));
