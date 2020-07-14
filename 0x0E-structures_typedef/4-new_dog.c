@@ -62,9 +62,9 @@ int _strlen(char *s)
  */
 char *_strcpy(char *dest, char *src)
 {
-	int b;
+	int b, c;
 
-	for (b = 0; src[b] != '\0'; b++)
+	for (b = 0; src[b] < (c + 1); b++)
 	{
 		dest[b] = src[b];
 	}
