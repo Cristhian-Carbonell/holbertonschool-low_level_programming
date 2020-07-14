@@ -4,7 +4,7 @@
  * new_dog - that creates a new dog.
  * @name: dog name
  * @age: dog age
- * @owne: dog owner
+ * @owner: dog owner
  *
  * Return: new dog
  */
