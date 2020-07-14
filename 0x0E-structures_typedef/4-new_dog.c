@@ -10,8 +10,8 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int len1;
-	int len2;
+	unsigned int len1;
+	unsigned int len2;
 	dog_t *ptr1;
 
 	len1 = _strlen(name);
@@ -46,7 +46,7 @@ dog_t *new_dog(char *name, float age, char *owner)
  */
 int _strlen(char *s)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 		;
