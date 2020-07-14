@@ -10,15 +10,15 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	unsigned int len1;
-	unsigned int len2;
+	int len1;
+	int len2;
 	dog_t *ptr1;
 
-	len1 = _strlen(name);
-	len2 = _strlen(owner);
 	ptr1 = malloc(sizeof(dog_t));
 	if (ptr1 == NULL)
 		return (NULL);
+	len1 = _strlen(name);
+	len2 = _strlen(owner);
 	ptr1->name = malloc(sizeof(char) * (len1 + 1));
 	if (ptr1->name == NULL)
 	{
@@ -46,7 +46,7 @@ dog_t *new_dog(char *name, float age, char *owner)
  */
 int _strlen(char *s)
 {
-	unsigned int i;
+	int i;
 
 	for (i = 0; s[i] != '\0'; i++)
 		;
