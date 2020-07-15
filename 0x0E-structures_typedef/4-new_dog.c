@@ -64,9 +64,9 @@ char *_strcpy(char *dest, char *src)
 {
 	int b;
 
-	for (b = 0; src[b] <= '0'; b++)
+	for (b = 0; (dest[b] = src[b]); b++)
 	{
-		dest[b] = src[b];
+		;
 	}
 	return (dest);
 }
