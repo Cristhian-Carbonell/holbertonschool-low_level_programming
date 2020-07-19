@@ -1,10 +1,49 @@
 #include "variadic_functions.h"
 
 /**
- * print_all -
- * @format:
- *
- *
+ * func_char - function that prints char
+ * @ap: list of arguments passed to the function
+ */
+void func_char(va_list ap)
+{
+	printf("%c",  va_arg(ap, int));
+}
+
+/**
+ * func_int - function that prints int
+ * @ap: list of types of arguments passed to the function
+ */
+void func_int(va_list ap)
+{
+	printf("%d", va_arg(ap, int));
+}
+
+/**
+ * func_float - function that prints float
+ * @ap: list of types of arguments passed to the function
+ */
+void func_float(va_list ap)
+{
+ 	printf("%f", va_arg(ap, double));
+}
+
+/**
+ * funcp_char - function that prints string
+ * @ap: list of types of arguments passed to the function
+ */
+void funcp_char(va_list ap)
+{
+	char *resul;
+
+	resul = va_arg(ap, char *);
+	if (resul == NULL)
+		printf("(nil)");
+	else
+		printf("%s", resul);
+}
+/**
+ * print_all - prints anything
+ * @format: is a list of types of arguments passed to the function
  */
 void print_all(const char * const format, ...)
 {
@@ -38,46 +77,4 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(ap);
-}
-
-/**
- * func_char -
- * @ap:
- */
-void func_char(va_list ap)
-{
-	printf("%c",  va_arg(ap, int));
-}
-
-/**
- * func_int -
- * @ap:
- */
-void func_int(va_list ap)
-{
-	printf("%d", va_arg(ap, int));
-}
-
-/**
- * va_list -
- * @ap:
- */
-void func_float(va_list ap)
-{
- 	printf("%f", va_arg(ap, double));
-}
-
-/**
- * funcp_char -
- * @ap:
- */
-void funcp_char(va_list ap)
-{
-	char *resul;
-
-	resul = va_arg(ap, char *);
-	if (resul == NULL)
-		printf("(nil)");
-	else
-		printf("%s", resul);
 }
