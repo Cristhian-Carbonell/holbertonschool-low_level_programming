@@ -37,7 +37,7 @@ void funcp_char(va_list ap)
 
 	resul = va_arg(ap, char *);
 	if (resul == NULL)
-		printf("(nil)");
+		resul = "(nil)";
 	printf("%s", resul);
 }
 
@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 
 	va_start(ap, format);
 	i = 0;
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
 		j = 0;
 		while (ops[j].op != NULL)
