@@ -9,4 +9,20 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+/**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+typedef struct op
+{
+	char *op;
+	void (*func)();
+} op_t;
+void func_char(va_list ap);
+void func_int(va_list ap);
+void func_float(va_list ap);
+void funcp_char(va_list ap);
+
 #endif
