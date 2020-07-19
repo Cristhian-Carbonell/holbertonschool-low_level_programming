@@ -24,7 +24,7 @@ void func_int(va_list ap)
  */
 void func_float(va_list ap)
 {
- 	printf("%f", va_arg(ap, double));
+	printf("%f", va_arg(ap, double));
 }
 
 /**
@@ -40,6 +40,7 @@ void funcp_char(va_list ap)
 		printf("(nil)");
 	printf("%s", resul);
 }
+
 /**
  * print_all - prints anything
  * @format: is a list of types of arguments passed to the function
