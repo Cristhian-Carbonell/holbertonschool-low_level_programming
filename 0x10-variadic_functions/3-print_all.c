@@ -38,8 +38,7 @@ void funcp_char(va_list ap)
 	resul = va_arg(ap, char *);
 	if (resul == NULL)
 		printf("(nil)");
-	else
-		printf("%s", resul);
+	printf("%s", resul);
 }
 /**
  * print_all - prints anything
@@ -70,6 +69,7 @@ void print_all(const char * const format, ...)
 				printf("%s", separator);
 				ops[j].func(ap);
 				separator = ", ";
+				break;
 			}
 			j++;
 		}

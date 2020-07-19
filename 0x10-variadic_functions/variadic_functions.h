@@ -20,6 +20,7 @@ typedef struct op
 	char *op;
 	void (*func)();
 } op_t;
+
 void func_char(va_list ap);
 void func_int(va_list ap);
 void func_float(va_list ap);
