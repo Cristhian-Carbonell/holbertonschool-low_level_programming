@@ -3,8 +3,8 @@
 /**
  * add_nodeint_end - function that adds a new node at the end of a
  * linstint_t list
- * @head:
- * @n:
+ * @head: first node
+ * @n: number node
  *
  * Return: the address of the new element, ot NULL if it failed
  */
