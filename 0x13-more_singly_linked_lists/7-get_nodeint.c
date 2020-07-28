@@ -3,8 +3,8 @@
 /**
  * get_nodeint_at_index - function that return the nth node of a
  * listint_t linked list
- * @head:
- * @index:
+ * @head: Node
+ * @index: is the index of node
  *
  * Return: the umpteenth node, or NULL if it doesn't exist
  */
