@@ -1,4 +1,4 @@
-#include "lists"
+#include "lists.h"
 
 /**
  * free-listint2 - fuction that frees a listint_t list
