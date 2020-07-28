@@ -1,8 +1,8 @@
 #include "lists"
 
 /**
- * free-listint2 -
- * @head:
+ * free-listint2 - fuction that frees a listint_t list
+ * @head: node
  */
 void free_listint2(listint_t **head)
 {
