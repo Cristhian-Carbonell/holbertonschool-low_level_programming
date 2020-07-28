@@ -7,7 +7,8 @@
  * @n: number node
  *
  * Return: the addres of the new element, o NULL if it failde
- */listint_t *add_nodeint(listint_t **head, const int n)
+ */
+listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new_node = malloc(sizeof(listint_t *));
 
