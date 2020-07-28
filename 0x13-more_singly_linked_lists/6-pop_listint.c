@@ -3,6 +3,8 @@
 /**
  * pop_listint - function that deletes the head node of a listint_t
  * @head: Node
+ *
+ * Return: position node
  */
 int pop_listint(listint_t **head)
 {
