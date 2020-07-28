@@ -3,7 +3,7 @@
 /**
  * listnt_len - function that returns the number of elements in linked
  * listnt_t list
- * @: number nodes
+ * @h: number nodes
  *
  * Return: the number of elements
  */
