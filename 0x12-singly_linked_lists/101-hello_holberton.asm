@@ -1,17 +1,20 @@
-section .data
+.section .data
 
-	msg db "Hello, Holberton", 0xa
+	msg db "Hello, Holberton\n"
 
+longsaludo
+	.quead .-saludo
 
-section .text
-	global main
+.section .text
+	.global main
 
 main:
-	mov  rax, 1
-	mov rdi, 1
-	mov rsi, msg
-	mov rdx, 17
+	mov $1, %rax
+	mov $1, %rdi
+	mov $saludo, %rsi
+	mov longsaludo, %rdx
 	syscall
-	mov rax, 60
-	mov rdi, 0
+
+	mov $60, %rax
+	mov $0, %rdi
 	syscall
