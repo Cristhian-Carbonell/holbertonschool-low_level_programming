@@ -9,16 +9,16 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int cont = 1, resul;
+	unsigned int cont = 1, resul;
 	unsigned long int tmp = n;
 
-	if (index == 0)
-		return (0);
 	while (tmp > 0)
 	{
 		tmp = tmp >> 1;
 		cont++;
 	}
+	if (index > cont)
+		return (-1);
 	resul = (1 & (n >> index));
 	return (resul);
 }
