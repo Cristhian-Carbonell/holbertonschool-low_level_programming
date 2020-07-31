@@ -12,10 +12,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int cont = 1, resul;
 	unsigned long int tmp = n;
 
+	if (index > 11)
+		return (-1);
 	while (tmp > 0)
 	{
-		if (index > 11)
-			return (-1);
 		tmp = tmp >> 1;
 		cont++;
 	}
