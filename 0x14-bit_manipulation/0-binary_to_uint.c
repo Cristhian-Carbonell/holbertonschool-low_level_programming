@@ -8,30 +8,30 @@
  * Return: the converted number, ro 0
  */
 unsigned int binary_to_uint(const char *b)
-{unsigned int out, resultado = 0;
-	int position = 0, indice = 0;
-	int num[] = {1, 2, 4, 8, 16, 32, 64, 128, 256};
+{
+	unsigned int num, resultado = 0;
+	int position = 0, mul = 1;
 
 	if (b == NULL)
 		return (0);
-	while (b[position] > '\0')
+	while (b[position] != '\0')
 	{
 		if (b[position] != '1' && b[position] != '0')
 			return (0);
-			position++;
+		position++;
 	}
 	position--;
 	while (position >= 0)
 	{
 		if (b[position] == '0')
-			out = 0;
+			num = 0;
 		else
-			out = 1;
-		if (resultado == 0)
-			resultado = out * num[indice];
+			num = 1;
+		if (resultado == 0 && mul == 1)
+			resultado = num;
 		else
-			resultado = resultado + (out * num[indice]);
-		indice++;
+			resultado = resultado + (num * mul);
+		mul *= 2;
 		position--;
 	}
 	return (resultado);
