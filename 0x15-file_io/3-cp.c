@@ -11,7 +11,7 @@ int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	cp_file(av[1], av[2], 1024);
@@ -30,35 +30,23 @@ void cp_file(char *file1, char *file2, size_t bytes)
 
 	fd1 = open(file1, O_RDONLY);
 	if (fd1 == -1)
-	{
 		printf_error_read(file1);
-	}
 	fd2 = open(file2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
-	{
 		printf_error_write(file2);
-	}
 	count = read(fd1, buf, bytes);
 	while (count > 0)
 	{
 		if (write(fd2, buf, count) < 0)
-		{
 			printf_error_write(file2);
-		}
 		count = read(fd1, buf, bytes);
 	}
 	if (count == -1)
-	{
 		printf_error_read(file1);
-	}
 	if (close(fd1) == -1)
-	{
 		printf_error_close(fd1);
-	}
 	if (close(fd2) == -1)
-	{
 		printf_error_close(fd2);
-	}
 }
 
 /**
@@ -67,7 +55,7 @@ void cp_file(char *file1, char *file2, size_t bytes)
  */
 void printf_error_read(char *filename)
 {
-	dprintf(2, "Error: Can't read from file %s\n", filename);
+	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 	exit(98);
 }
 
@@ -77,7 +65,7 @@ void printf_error_read(char *filename)
  */
 void printf_error_write(char *filename)
 {
-	dprintf(2, "Error: Can't write to %s\n", filename);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 	exit(99);
 }
 
@@ -87,6 +75,6 @@ void printf_error_write(char *filename)
  */
 void printf_error_close(int filename)
 {
-	dprintf(2, "Error: Can't close fd %d\n", filename);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", filename);
 	exit(100);
 }
