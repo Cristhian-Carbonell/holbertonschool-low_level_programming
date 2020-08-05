@@ -31,40 +31,64 @@ void cp_file(char *file1, char *file2, size_t bytes)
 	fd1 = open(file1, O_RDONLY);
 	if (fd1 == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file1);
-		exit(98);
+		printf_error_read(file1);
 	}
 	fd2 = open(file2, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd2 == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file2);
-		exit(99);
+		printf_error_write(file2);
 	}
 	count = read(fd1, buf, bytes);
 	while (count > 0)
 	{
 		if (write(fd2, buf, count) < 0)
 		{
-			dprintf(2, "Error: Can't write to %s\n", file2);
-			exit(99);
+			printf_error_write(file2);
 		}
 		count = read(fd1, buf, bytes);
 	}
 	if (count == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", file1);
-		exit(98);
+		printf_error_read(file1);
 	}
 	close(fd1);
 	if (fd1 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd1);
-		exit(100);
+		printf_error_close(fd1);
 	}
 	close(fd2);
 	if (fd2 == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd2);
-		exit(100);
+		printf_error_close(fd2);
 	}
+}
+
+/**
+ * printf_error_read - function that prints error
+ * @filename: arguments
+ */
+void printf_error_read(char *filename)
+{
+	dprintf(2, "Error: Can't read from file %s\n", filename);
+	exit(98);
+}
+
+/**
+ * printf_error_write - function that prints error
+ * @filename: arguments
+ */
+void printf_error_write(char *filename)
+{
+	dprintf(2, "Error: Can't write to %s\n", filename);
+	exit(99);
+}
+
+/**
+ * printf_error_close - function that prints error
+ * @filename: arguments
+ */
+void printf_error_close(int filename)
+{
+	dprintf(2, "Error: Can't close fd %d\n", filename);
+	exit(100);
 }
