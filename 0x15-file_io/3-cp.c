@@ -17,14 +17,11 @@ int main(int ac, char **av)
 	cp_file(av[1], av[2], 1024);
 	return (0);
 }
-
 /**
  * cp_file - function copies the content
  * @file1: is the name of the file
  * @file2: file of copy
  * @bytes: numbers bytes
- *
- * Return: 1
  */
 void cp_file(char *file1, char *file2, size_t bytes)
 {
