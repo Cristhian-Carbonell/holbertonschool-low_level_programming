@@ -14,7 +14,7 @@ int main(int ac, char **av)
 		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	cp_file(av[1], av[2]);
+	cp_file(av[1], av[2], 1024);
 	return (0);
 }
 /**
@@ -23,7 +23,7 @@ int main(int ac, char **av)
  * @file2: file of copy
  * @bytes: numbers bytes
  */
-void cp_file(char *file1, char *file2)
+void cp_file(char *file1, char *file2, size_t bytes)
 {
 	int fd1, fd2, count;
 	char buf[1024];
@@ -38,26 +38,24 @@ void cp_file(char *file1, char *file2)
 	{
 		printf_error_write(file2);
 	}
-	count = read(fd1, buf, 1024);
+	count = read(fd1, buf, bytes);
 	while (count > 0)
 	{
 		if (write(fd2, buf, count) < 0)
 		{
 			printf_error_write(file2);
 		}
-		count = read(fd1, buf, 1024);
+		count = read(fd1, buf, bytes);
 	}
 	if (count == -1)
 	{
 		printf_error_read(file1);
 	}
-	close(fd1);
-	if (fd1 == -1)
+	if (close(fd1) == -1)
 	{
 		printf_error_close(fd1);
 	}
-	close(fd2);
-	if (fd2 == -1)
+	if (close(fd2) == -1)
 	{
 		printf_error_close(fd2);
 	}
