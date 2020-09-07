@@ -37,7 +37,7 @@ At the end of this project, you are expected to be albe to [explain to anyone](h
 ## More Info
 
 Please use this data structure for this project:
-:::c
+```c
 /**
  * struct dlistint_s - doubly linked list
  * @n: integer
@@ -53,3 +53,4 @@ typedef struct dlistint_s
     struct dlistint_s *prev;
     struct dlistint_s *next;
 } dlistint_t;
+```
