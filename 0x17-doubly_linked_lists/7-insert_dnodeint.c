@@ -11,61 +11,38 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_node, *atreversar;
+	dlistint_t *new_node, *tmp;
 	unsigned int i;
-	size_t length_list;
 
-	length_list = dlistint_len(*h);
-	atreversar = *h;
 	if (h == NULL)
 		return (NULL);
+	if (idx == 0)
+		return (add_dnodeint(h, n));
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
 	new_node->n = n;
-	new_node->next = new_node->prev = NULL;
-	if (length_list < idx)
-	{
-		free(new_node);
-		return (NULL);
-	}
-	if (idx == 0)
-	{
-		if (*h != NULL)
-		{
-			new_node->next = *h;
-			(*h)->prev = new_node;
-		}
-		*h = new_node;
-		return (*h);
-	}
+	tmp = *h;
 	i = 0;
-	while (i < idx - 1)
+	while (i < (idx - 1))
 	{
-		atreversar = atreversar->next;
+		if (tmp)
+			tmp = tmp->next;
+		else
+		{
+			free(new_node);
+			return (NULL);
+		}
 		i++;
 	}
-	new_node->next = atreversar->next;
-	new_node->prev = atreversar;
-	atreversar->next = new_node;
-	if (new_node->next != NULL)
-		new_node->next->prev = new_node;
-	return (new_node);
-}
-
-/**
- * dlistint_len - returns the number of elements in linked dlistint_t list
- * @h: pointer  to head
- *
- * Return: number of elements in list
- */
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t i = 0;
-
-	while (h != NULL)
+	if (tmp->next != NULL)
 	{
-		h = h->next;
+		free(new_node);
+		return (add_dnodeint_end(h, n));
 	}
-	return (i);
+	new_node->next = tmp->next;
+	new_node->prev = tmp;
+	(tmp->next)->prev = new_node;
+	tmp->next = new_node;
+	return (new_node);
 }
