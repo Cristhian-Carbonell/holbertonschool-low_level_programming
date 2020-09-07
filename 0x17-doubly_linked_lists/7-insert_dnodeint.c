@@ -15,8 +15,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i;
 	size_t length_list;
 
+	length_list(*h)
 	atreversar = *h;
-	length_list = dlistint_len(*h);
 	if (h == NULL)
 		return (NULL);
 	new_node = malloc(sizeof(dlistint_t));
