@@ -1,4 +1,4 @@
-#ifndef HOLBERTON_H
+B#ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <unistd.h>
 
@@ -23,4 +23,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif /* HOLBERTON_H */
+#endif /* HOLBERTON */
