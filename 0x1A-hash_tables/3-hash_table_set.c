@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 /**
  * insert_element_list - function inserts our elements in the list
  * @ht: is the hash table you want to add or update the key/value to
- * @elemente: insert an elemente into the given index of the array
+ * @element: insert an elemente into the given index of the array
  */
 void insert_element_list(hash_table_t *ht, hash_node_t *element)
 {
