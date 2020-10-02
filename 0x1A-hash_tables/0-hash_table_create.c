@@ -8,10 +8,14 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *new_hash[size];
+	hash_table_t *new_table = malloc(sizeof(hash_table_t));
+	unsigned long int i;
 
-	new_hash = malloc(sizeof(hash_table_t));
-	if (new_hash == NULL)
+	if (new_table == NULL)
 		return (NULL);
-	return (new_hash);
+	new_table->size = size;
+	new_table->array = calloc(new_table->size, sizeof(hash_node_t));
+	for (i = 0; i < new_table->size; i++)
+		new_table->array[i] = NULL;
+	return (new_table);
 }
