@@ -8,16 +8,16 @@ void print_number(int n)
 {
 	int a, b, c, d, temp, temp1;
 
+	if (n < 0)
+	{
+		n *= -1;
+		_putchar('-');
+	}
 	if (n == 0)
 		_putchar(n + '0');
 	else
 		if (n < 100)
 		{
-			if (n < 0)
-			{
-				n *= -1;
-				_putchar('-');
-			}
 			a = n / 10;
 			b = n % 10;
 			_putchar(a + '0');
