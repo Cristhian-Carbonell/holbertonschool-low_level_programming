@@ -8,7 +8,7 @@ For this project, students are expected to look at these concepts:
 - [Data Structures](https://intranet.hbtn.io/concepts/120)
 ## Resources
 
-### Read or watch:
+#### Read or watch:
 
 * [C - Arrays](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
 * [C - Pointers](https://www.tutorialspoint.com/cprogramming/c_pointers.htm)
@@ -27,7 +27,7 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 * How to use strings and how to manipulate them
 * Scope of variables
 
-##Requirements
+## Requirements
 
 ### General
 
