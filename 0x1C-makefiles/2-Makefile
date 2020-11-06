@@ -5,7 +5,7 @@ OBJ = holberton.o main.o
 NAME = holberton
 #################################################
 # create executable file named holberton
-all: $(NAME) holberton.o main.o
+all: $(NAME)
 main.o: $(SRC)
 	gcc -c -o main.o main.c
 holberton.o: $(SRC)
