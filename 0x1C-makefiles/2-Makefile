@@ -1,0 +1,14 @@
+################################################
+CC = gcc
+SRC = main.c holberton.c
+OBJ = holberton.o main.o
+NAME = holberton
+#################################################
+# create executable file named holberton
+all: $(NAME) holberton.o main.o
+main.o: $(SRC)
+	gcc -c -o main.o main.c
+holberton.o: $(SRC)
+	gcc -c -o holberton.o holberton.c
+holberton: $(OBJ) m.h
+	gcc $(OBJ) -o holberton
