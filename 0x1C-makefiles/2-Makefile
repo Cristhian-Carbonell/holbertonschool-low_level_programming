@@ -7,8 +7,8 @@ NAME = holberton
 # create executable file named holberton
 all: $(NAME)
 main.o: $(SRC)
-	gcc -c -o main.o main.c
+	$(CC) -c -o $(OBJ) $(SRC)
 holberton.o: $(SRC)
-	gcc -c -o holberton.o holberton.c
+	$(CC) -c -o $(OBJ) $(SRC)
 holberton: $(OBJ) m.h
-	gcc $(OBJ) -o holberton
+	$(CC) $(OBJ) -o holberton
