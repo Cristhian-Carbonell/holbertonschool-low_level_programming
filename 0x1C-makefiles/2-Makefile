@@ -1,14 +1,10 @@
 ################################################
 CC = gcc
 SRC = main.c holberton.c
-OBJ = holberton.o main.o
+OBJ = $(SRC:.c=.o)
 NAME = holberton
 #################################################
 # create executable file named holberton
-all: $(NAME)
-main.o: main.c
-	$(CC) -c -o main.o main.c
-holberton.o: holberton.c
-	$(CC) -c -o holberton.o holberton.c
-$(NAME): $(OBJ) m.h
+
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
