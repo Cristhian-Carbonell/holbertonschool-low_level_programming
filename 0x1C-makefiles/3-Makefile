@@ -11,16 +11,14 @@ all: $(OBJ)
 
 # Deletes all Emacs and Vim temporary files along with the executable
 clean:
-	$(RM) *~ holberton
+	$(RM) *~ $(NAME)
 
 # Deletes the object files
 oclean:
 	$(RM) $(OBJ)
 
 #Deletes the Emacs temporary files, the executable, and the object files
-fclean:
-	$(RM) *~ holberton
-	$(RM) $(OBJ)
+fclean: clean oclean
 
 # Forces recompilation of all source files
 re: oclean all
