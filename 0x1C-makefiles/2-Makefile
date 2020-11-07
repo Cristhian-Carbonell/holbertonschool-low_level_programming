@@ -6,9 +6,9 @@ NAME = holberton
 #################################################
 # create executable file named holberton
 all: $(NAME)
-main.o: $(SRC)
-	$(CC) -c -o $(OBJ) $(SRC)
-holberton.o: $(SRC)
-	$(CC) -c -o $(OBJ) $(SRC)
-holberton: $(OBJ) m.h
-	$(CC) $(OBJ) -o holberton
+main.o: main.c
+	$(CC) -c -o main.o main.c
+holberton.o: holberton.c
+	$(CC) -c -o holberton.o holberton.c
+$(NAME): $(OBJ) m.h
+	$(CC) $(OBJ) -o $(NAME)
