@@ -1,0 +1,26 @@
+####################################################
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+RM = rm -f
+###################################################
+# Buils your executable
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+# Deletes all Emacs and Vim temporary files along with the executable
+clean:
+	$(RM) *~ holberton
+
+# Deletes the object files
+oclean:
+	$(RM) $(OBJ)
+
+#Deletes the Emacs temporary files, the executable, and the object files
+fclean:
+	$(RM) *~ holberton
+	$(RM) $(OBJ)
+
+# Forces recompilation of all source files
+re: oclean all
