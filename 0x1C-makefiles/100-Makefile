@@ -4,7 +4,6 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
-RM = rm -f
 DEPS := "$(wildcard m.h)"
 ##############################################
 
@@ -16,12 +15,12 @@ all: $(OBJ)
 .PHONY: clean
 # deletes all Emacs and Vim temporary files along with the executable
 clean:
-	$(RM) *~ $(NAME)
+	$(RM) -f *~ $(NAME)
 
 .PHONY: oclean
 # deletes the object files
 oclean:
-	$(RM) $(OBJ)
+	$(RM) -f $(OBJ)
 
 .PHONY: fclean
 # deletes the Emacs temporary files, the executable, and the object files
