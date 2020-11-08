@@ -5,22 +5,29 @@ SRC = main.c holberton.c
 OBJ = $(SRC:.c=.o)
 NAME = holberton
 RM = rm -f
+DEPS := "$(wildcard m.h)"
 ##############################################
 
+ifneq ($(DEPS), "")
 # builds your executable
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
+.PHONY: clean
 # deletes all Emacs and Vim temporary files along with the executable
 clean:
 	$(RM) *~ $(NAME)
 
+.PHONY: oclean
 # deletes the object files
 oclean:
 	$(RM) $(OBJ)
 
+.PHONY: fclean
 # deletes the Emacs temporary files, the executable, and the object files
 fclean: clean oclean
 
+.PHONY: re
 # forces recompilation of all source files
-rm: oclean all
+re: oclean all
+endif
