@@ -17,7 +17,7 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
-void print_rand_added_to_n(int n);
+void print_rand(int n);
 char random_ascii(void);
 
 #endif
