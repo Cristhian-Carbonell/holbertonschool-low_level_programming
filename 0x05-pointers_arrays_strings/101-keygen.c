@@ -1,5 +1,9 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
+void print_rand(int n);
+char random_ascii(void);
 /**
  * main - program that generates random valid passwords for the program 101-crackme.
  *

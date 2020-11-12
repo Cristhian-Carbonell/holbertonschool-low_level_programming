@@ -1,10 +1,6 @@
 #ifndef HOLBERTON
 #define HOLBERTON
 
-#include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-
 int _putchar(char c);
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
@@ -17,7 +13,5 @@ void puts_half(char *str);
 void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
-void print_rand(int n);
-char random_ascii(void);
 
 #endif
