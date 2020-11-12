@@ -9,7 +9,7 @@ char random_ascii(void);
  *
  * Return: 0
  */
-int main()
+int main(void)
 {
 	srand(time(0));
 	/* printf("string that adds to n: %s\n", rand_added_to_n(2772)); */
