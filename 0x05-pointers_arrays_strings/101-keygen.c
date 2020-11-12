@@ -41,6 +41,11 @@ void print_rand(int n)
 	}
 }
 
+/**
+ * random_ascii - function
+ * 
+ * Return: char and 0
+ */
 char random_ascii(void)
 {
 	char rtrnCh = 0;
