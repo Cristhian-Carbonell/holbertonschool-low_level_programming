@@ -2,8 +2,6 @@
 #include <time.h>
 #include <stdlib.h>
 
-void print_rand(int n);
-char random_ascii(void);
 /**
  * main - program that generates random valid passwords for the program 101-crackme.
  *
@@ -11,68 +9,40 @@ char random_ascii(void);
  */
 int main(void)
 {
+	char passwd[84];
+	int i = 0, sum = 0, temp1, temp2;
+
 	srand(time(0));
-	/* printf("string that adds to n: %s\n", rand_added_to_n(2772)); */
-	print_rand(2772);
-}
-
-/**
- * print_rand - print a random number
- * @n: parameter where it receives an integer
- */
-void print_rand(int n)
-{
-	char temp;
-	int total = 0;
-
-	while (total != n)
+	while (sum < 2772)
 	{
-		temp = random_ascii();
-		if (temp == 0)
+		passwd[i] = 33 + rand() % 94;
+		sum += passwd[i++];
+	}
+	passwd[i] = '\0';
+	if (sum != 2772)
+	{
+		temp1 = (sum - 2772) / 2;
+		temp2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			temp1++;
+		for (i = 0; passwd[i]; i++)
 		{
-			continue;
+			if (passwd[i] >= (33 + temp1))
+			{
+				passwd[i] -= temp1;
+				break;
+			}
 		}
-		if (total + temp > n)
+		for (i = 0; passwd[i]; i++)
 		{
-			temp = n - total;
+			if (passwd[i] >= (33 + temp2))
+			{
+				passwd[i] -= temp2;
+				break;
+			}
 		}
-		putchar(temp);
-		total = total + temp;
 	}
-}
+	printf("%s", passwd);
 
-/**
- * random_ascii - function
- * 
- * Return: char and 0
- */
-char random_ascii(void)
-{
-	char rtrnCh = 0;
-	int p1 = 0, p2 = 0, p3 = 0, setP3 = 0, setP2 = 0;
-
-	setP3 = rand() % 2, setP2 = rand() % 2; /* set to 1 or 0 */
-	p1 = rand() % 2; /* p1 ascii is only 1 or 0 */
-	if (setP2)
-	{
-		p2 = rand() % 10; /* p2 ascii can be 0..9 */
-	}
-	if (setP3 && setP2) /* cant have p3 if no p2 */
-	{
-		p3 = rand() % 10;
-	}
-	if (p3 > 7)
-		p3 = 10 - p3; /* p3 ascii can only be 0..7 */
-	if (setP3 && setP2)
-		rtrnCh = rtrnCh * 10 + p3 - '0';
-	if (setP2)
-		rtrnCh = rtrnCh * 10 + p2 - '0';
-	rtrnCh = rtrnCh * 10 + p1 - '0';
-
-	if ((rtrnCh >= '0' && rtrnCh <= '9') || (rtrnCh >= 'a' && rtrnCh <= 'z') || (rtrnCh >= 'A' && rtrnCh <= 'Z'))
-	{
-		return (rtrnCh);
-	}
-	else
-		return (0);
+	return (0);
 }
