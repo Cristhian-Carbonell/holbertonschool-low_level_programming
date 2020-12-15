@@ -9,7 +9,7 @@ void print_buffer(char *b, int size)
 {
 	int byte = 0, i;
 
-	while (byte < size)
+	for (byte = 0; byte < size; byte += 10)
 	{
 		printf("%08x: ", byte);
 
@@ -36,7 +36,6 @@ void print_buffer(char *b, int size)
 		if (byte >= size)
 			continue;
 		printf("\n");
-		byte += 10;
 	}
 
 	if (size >= 0)
