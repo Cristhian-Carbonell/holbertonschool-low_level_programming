@@ -30,7 +30,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (ptr);
 	}
 	cp_ptr = ptr;
-	new_ptr = malloc(new_size * sizeof(cp_ptr));
+	new_ptr = malloc(new_size * sizeof(*cp_ptr));
 	if (!new_ptr)
 	{
 		free(ptr);
