@@ -9,16 +9,19 @@
  */
 int *array_range(int min, int max)
 {
-	int *ptr, i;
+	int *ptr, i, j;
 
 	if (min > max)
+	{
+		printf("ingreso aqui\n");
 		return (NULL);
+	}
 
 	ptr = (int *) malloc((min + max) * sizeof(int));
 	if (!ptr)
 		return (NULL);
-	for (i = 0; i <= max; i++, min++)
-		ptr[i] = min;
+	for (j = min, i = 0; j <= max; i++, j++)
+		ptr[i] = j;
 
 	return (ptr);
 }
